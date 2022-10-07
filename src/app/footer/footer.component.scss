@@ -26,3 +26,16 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 580px) {
+  footer {
+    flex-direction: column;
+    padding: $spacing-S;
+    .rights {
+      margin-bottom: $spacing-S;
+    }
+    .web-links img {
+      margin-left: $spacing-S;
+    }
+  }
+}

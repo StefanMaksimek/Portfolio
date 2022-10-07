@@ -66,8 +66,10 @@
     justify-content: center;
     flex-wrap: wrap;
     img {
-      max-height: 300px;
+      height: 300px;
+      width: 300px;
       margin: $spacing-S;
+      object-fit: cover;
     }
 
     .credential {
@@ -116,6 +118,12 @@
         &:hover {
           background-color: $primary;
         }
+        &:disabled {
+          border: none;
+          color: $black;
+          background-color: $primary-tr;
+          cursor: not-allowed;
+        }
       }
     }
   }
@@ -123,7 +131,6 @@
 
 .about-me {
   text-align: center;
-  padding: $spacing-M;
   hr {
     margin: $spacing-XL;
   }
@@ -197,7 +204,8 @@
     .me {
       flex-direction: column;
       img {
-        margin: 0;
+        margin-right: 0;
+        margin-bottom: $spacing-M;
       }
     }
 

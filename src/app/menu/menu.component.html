@@ -5,22 +5,26 @@
   </a>
   <div class="links">
     <a routerLink="">Home</a>
-    <a routerLink="privacy">Privacy</a>
-    <a routerLink="imprint">Imprint</a>
-    <a routerLink="contact">Contact</a>
+    <a routerLink="about">About</a>
+    <a routerLink="portfolio">Portfolio</a>
   </div>
-  <div class="burger" id="burger" (click)="openCloseMobileSide()">
+  <div
+    class="burger"
+    [ngClass]="{ toggle: mmActive }"
+    id="burger"
+    (click)="openCloseMobileSide()"
+  >
     <a class="lines" href="#">
       <div class="line1"></div>
       <div class="line2"></div>
-      <div class="line3"></div>
     </a>
   </div>
 </header>
 
-<div class="mobile-menu" [ngClass]="{ 'open-mobile-menu': mmActive }">
+<div class="mobile-menu" *ngIf="mmActive">
   <a routerLink="" (click)="openCloseMobileSide()">Home</a>
-  <a routerLink="privacy" (click)="openCloseMobileSide()">Privacy</a>
+  <a routerLink="about" (click)="openCloseMobileSide()">About</a>
+  <a routerLink="portfolio" (click)="openCloseMobileSide()">Portfolio</a>
   <a routerLink="imprint" (click)="openCloseMobileSide()">Imprint</a>
-  <a routerLink="contact" (click)="openCloseMobileSide()">Contact</a>
+  <a routerLink="privacy" (click)="openCloseMobileSide()">Privacy</a>
 </div>

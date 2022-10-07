@@ -6,33 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  skills = [
-    { title: 'Angular', icon: 'angular.png' },
-    { title: 'JavaSript', icon: 'javascript.png' },
-    { title: 'Sass', icon: 'sass.png' },
-    { title: 'Git', icon: 'git.png' },
-    { title: 'Scrum', icon: 'scrum.png' },
-    { title: 'Design Thinking', icon: 'desing-thinking.png' },
-    { title: 'Databases', icon: 'databases.png' },
-    { title: 'Rest API', icon: 'rest-api.png' },
-    { title: 'Test automation', icon: 'test-automatisation.png' },
-  ];
-
-  //loadSkills() {
-  //  this.skills.forEach((s) => {
-  //    document.getElementById('skill-box').innerHTML = '';
-  //    document.getElementById('skill-box').innerHTML = `
-  //    <div class="skill-description">
-  //      Angular
-  //      <div class="skill-icon">
-  //        <img src="../../assets/img/icons/angular.png" alt="" />
-  //      </div>
-  //    `;
-  //  });
-  //}
+  public javaSkript: boolean = true;
+  public angular: boolean = true;
   constructor() {}
 
-  ngOnInit(): void {
-    //this.loadSkills();
+  ngOnInit(): void {}
+
+  workFilter(x: String) {
+    if (x == 'angular') {
+      this.angular = true;
+      this.javaSkript = false;
+    }
+    if (x == 'javaSkript') {
+      this.angular = false;
+      this.javaSkript = true;
+    }
+    if (x == 'all') {
+      this.angular = true;
+      this.javaSkript = true;
+    }
   }
 }

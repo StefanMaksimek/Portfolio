@@ -6,7 +6,9 @@
         I`M <span class="first-name">Stefan</span> Maksimek <br />
         Front End develop<span class="font-highlite">e</span>r
       </p>
-      <button>Contact me</button>
+      <a [routerLink]="['contact']" routerLinkActive="router-link-active"
+        ><button>Contact me</button></a
+      >
     </div>
     <div class="portrait">
       <img src="../../assets/img/portfolioportrait.jpg" alt="" />
@@ -17,41 +19,49 @@
   <div class="section-black my-work">
     <H2>My Work</H2>
     <div class="tab-holder">
-      <button>ALL</button>
-      <button>JavaScrip</button>
-      <button>Angular</button>
+      <button (click)="workFilter('all')">ALL</button>
+      <button (click)="workFilter('javaSkript')">JavaScrip</button>
+      <button (click)="workFilter('angular')">Angular</button>
     </div>
     <div class="credentials">
-      <div class="credential">
+      <div class="credential" *ngIf="javaSkript">
         <img src="../../assets/img/credential.png" alt="" />
         <div class="try-out">
-          <span>Title</span>
+          <span>El Pollo Loco</span>
           <p>JavaScript-based jump and run game.</p>
-          <button>Try out</button>
+          <a
+            href="https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/"
+            target="_blank"
+            ><button>Try out</button></a
+          >
         </div>
       </div>
-      <div class="credential">
-        <img src="../../assets/img/credential.png" alt="" />
+      <div class="credential" *ngIf="angular">
+        <img src="../../assets/img/business_app.jpg" alt="" />
         <div class="try-out">
-          <span>Title</span>
-          <p>JavaScript-based jump and run game.</p>
-          <button>Try out</button>
+          <span>Portfolio</span>
+          <p>Personal porfolio website</p>
+          <a href="" target="_blank"><button>Try out</button></a>
         </div>
       </div>
-      <div class="credential">
-        <img src="../../assets/img/credential.png" alt="" />
+      <div class="credential" *ngIf="javaSkript">
+        <img src="../../assets/img/laptop.jpg" alt="" />
         <div class="try-out">
-          <span>Title</span>
-          <p>JavaScript-based jump and run game.</p>
-          <button>Try out</button>
+          <span>Join</span>
+          <p>Kanban Project Management Tool.</p>
+          <a
+            href="https://gruppe-272.developerakademie.net/Gruppenarbeit-Join-/index.html"
+            target="_blank"
+            ><button>Try out</button></a
+          >
         </div>
       </div>
-      <div class="credential">
-        <img src="../../assets/img/credential.png" alt="" />
+      <div class="credential" *ngIf="angular">
+        <img src="../../assets/img/ace.jpg" alt="" />
         <div class="try-out">
-          <span>Title</span>
-          <p>JavaScript-based jump and run game.</p>
-          <button>Try out</button>
+          <span>Poker</span>
+          <p>No-limit Texas Hold'em Poker</p>
+          <a href="" target="_blank"><button disabled>in Progress</button></a>
         </div>
       </div>
     </div>

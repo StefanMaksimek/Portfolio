@@ -1,0 +1,28 @@
+@import "../../assets/variable.scss";
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-L;
+  background-color: $white;
+  color: $grey;
+  font-size: $fontsize-p;
+
+  a {
+    color: $grey;
+    font-size: $fontsize-p;
+    transition: $transition-ms;
+    &:hover {
+      color: $primary;
+    }
+    img {
+      margin-left: $spacing-L;
+      border-radius: 50%;
+      transition: $transition-ms;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import "../../assets/variable.scss";
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  H1 {
+    color: $secondary;
+  }
+  a {
+    color: $secondary;
+  }
+  .input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .input-danger {
+      border-left: 2px solid $danger;
+      border-top: 2px solid $danger;
+      &:focus {
+        border-left: 2px solid transparent;
+        border-top: 2px solid transparent;
+        box-shadow: -2px -2px 5px 0px #ff0000 inset;
+      }
+    }
+    .input-success {
+      border-left: 2px solid $success;
+      border-top: 2px solid $success;
+      &:focus {
+        border-left: 2px solid transparent;
+        border-top: 2px solid transparent;
+        box-shadow: -2px -2px 5px 0px $success inset;
+      }
+    }
+    .input-error {
+      position: absolute;
+      top: 0;
+      right: $spacing-S;
+      transform: translateY(450%);
+      color: $error;
+    }
+  }
+  label,
+  input,
+  textarea {
+    margin: $spacing-S 0;
+    font-size: $fontsize-p;
+    border-radius: 2px;
+    &:disabled {
+      background-color: $white-tr;
+      color: $grey-tr;
+      border-color: $white-tr;
+    }
+  }
+
+  input,
+  textarea {
+    padding: $spacing-S;
+    background-color: $darkGray;
+    border: none;
+    outline: none;
+    color: $white;
+    &:active {
+      color: $white;
+    }
+  }
+
+  ::placeholder {
+    color: $white-tr;
+  }
+
+  .btn-holder {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+
+  button {
+    border: 2px solid $secondary;
+    color: $secondary;
+    transition: $transition-ms;
+    &:hover {
+      background-color: $secondary;
+      color: $white;
+    }
+    &:disabled {
+      border: none;
+      color: $white-tr;
+      background-color: $secondary-tr;
+      cursor: not-allowed;
+    }
+  }
+}

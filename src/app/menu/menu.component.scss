@@ -1,0 +1,134 @@
+@import "../../assets/variable.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-M $spacing-XXL;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  h1 {
+    color: $white;
+  }
+
+  img {
+    height: $spacing-XL;
+  }
+
+  h1 {
+    margin-left: $spacing-M;
+    font-size: $fontsize-H2;
+    font-weight: 100;
+    font-style: italic;
+  }
+}
+
+.links {
+  display: flex;
+  font-size: $fontsize-H2;
+  height: $spacing-XL;
+  align-items: flex-end;
+
+  a {
+    margin-left: $spacing-XL;
+    color: $white;
+    transition: all ease-in-out 150ms;
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+.mobile-menu {
+  background-color: $black;
+  position: absolute;
+  top: 117px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: $transition-ms;
+  transform: translate(100%);
+  overflow-x: hidden;
+
+  a {
+    padding: $spacing-XL;
+    font-size: $fontsize-H1;
+    color: $white;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.open-mobile-menu {
+  transform: translate(0);
+}
+
+.burger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lines {
+  flex-direction: column;
+  border-radius: 100%;
+  &:hover {
+    cursor: pointer;
+    background-color: $darkGray;
+  }
+  div {
+    height: 3px;
+    width: 39px;
+    background-color: $white;
+    margin: 10px 0;
+    transition: all ease 0.225s;
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media screen and (max-width: 1100px) {
+  header {
+    padding: $spacing-S $spacing-M;
+  }
+
+  .links {
+    a {
+      display: none;
+    }
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    top: 84px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .logo {
+    h1 {
+      display: none;
+    }
+  }
+}

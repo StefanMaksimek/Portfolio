@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/variable.scss";
+@import "./assets/fonts/font.css";
+
+body {
+  margin: 0;
+  background-color: $black;
+  font-family: $haed-font;
+  color: $white;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: $fontsize-H1;
+}
+
+h2 {
+  font-size: $fontsize-H2;
+}
+
+p,
+span {
+  font-size: $fontsize-p;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+hr {
+  border-color: $secondary;
+  margin: $spacing-L $spacing-XXL;
+}
+
+button {
+  height: $spacing-XL;
+  width: calc(2 * $spacing-XXL);
+  font-size: $fontsize-p;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.section-black,
+.section-gray {
+  padding: $spacing-XL $spacing-XXL;
+}
+
+.section-gray {
+  background-color: $darkGray;
+}
+
+@media screen and (max-width: 900px) {
+  .section-black,
+  .section-gray {
+    padding: $spacing-S $spacing-M;
+  }
+
+  .section-gray {
+    background-color: $black;
+  }
+}

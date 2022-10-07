@@ -1,0 +1,60 @@
+<div class="section-black contact">
+  <form (ngSubmit)="sendMail()" #myForm="ngForm">
+    <h1>Contact me.</h1>
+    <p>
+      Get in touch via the form below, or by emailing
+      <a href="mailto:stefan.maksimek@gmail.com">stefan.maksimek@gmail.com</a>
+    </p>
+    <div class="input-group">
+      <label>Name</label>
+      <input
+        required
+        type="text"
+        name="name"
+        id="contact-name"
+        #nameField
+        [(ngModel)]="name"
+        placeholder="Enter your name"
+      />
+      <div class="input-error" *ngIf="!nameField.validity.valid">
+        Name is required!
+      </div>
+    </div>
+    <div class="input-group">
+      <label>Email address</label>
+      <input
+        required
+        type="email"
+        name="email"
+        #emailField
+        [(ngModel)]="email"
+        placeholder="Enter your Email address"
+      />
+      <div class="input-error" *ngIf="!emailField.validity.valid">
+        E-Mail is required and musst be an E-Mail
+      </div>
+    </div>
+    <div class="input-group">
+      <label>Message</label>
+      <textarea
+        required
+        name="message"
+        id="contact-message"
+        cols="30"
+        rows="10"
+        #textField
+        [(ngModel)]="message"
+        placeholder="Enter your message"
+      ></textarea>
+
+      <div class="input-error" *ngIf="!(textField.textLength > 19)">
+        min length 20 words
+      </div>
+    </div>
+    <div class="btn-holder">
+      <button [disabled]="textField.textLength > 19 || myForm.invalid">
+        Send
+      </button>
+    </div>
+  </form>
+</div>

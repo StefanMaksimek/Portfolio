@@ -1,0 +1,52 @@
+@import "../../assets/variable.scss";
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skill-box {
+  margin-top: $spacing-XL;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .skill-description {
+    position: relative;
+    width: calc(1.5 * $spacing-XXL);
+    height: $spacing-XXL;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $spacing-L;
+    border-radius: $brd-radius;
+    background-color: $white;
+    color: $black;
+    font-size: $fontsize-p;
+    span {
+      transform: translateY(calc($spacing-XL / 4));
+    }
+  }
+
+  .skill-icon {
+    height: $spacing-XL;
+    width: $spacing-XL;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 5px 5px 5px #00000020;
+    img {
+      height: $spacing-L;
+      width: $spacing-L;
+      object-fit: cover;
+    }
+  }
+}

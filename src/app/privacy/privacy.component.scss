@@ -1,0 +1,13 @@
+@import "../../assets/variable.scss";
+
+.privacy {
+  padding: $spacing-S $spacing-XXL;
+  h1,
+  h2 {
+    text-align: center;
+    color: $secondary;
+  }
+  h1 {
+    color: $primary;
+  }
+}

@@ -1,0 +1,77 @@
+<div class="section-black contact">
+  <form novalidate (ngSubmit)="sendMail()" [formGroup]="myform">
+    <h1>Contact me.</h1>
+    <p>
+      Get in touch via the form below, or by emailing
+      <a href="mailto:stefan.maksimek@gmail.com">stefan.maksimek@gmail.com</a>
+    </p>
+    <div class="input-group">
+      <label>Name</label>
+      <input
+        name="name"
+        type="text"
+        class="input-group input-danger"
+        [ngClass]="{
+          'input-danger': name.invalid && (name.dirty || name.touched),
+          'input-success': name.valid
+        }"
+        formControlName="name"
+        #nameField
+        placeholder="Enter your name"
+      />
+      <div
+        *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="input-error"
+      >
+        is required
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input
+        name="email"
+        type="email"
+        class="input-group input-success"
+        [ngClass]="{
+          'input-danger': email.invalid && (email.dirty || email.touched),
+          'input-success': email.valid
+        }"
+        formControlName="email"
+        #emailField
+        placeholder="Enter your Email address"
+      />
+      <div
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="input-error"
+      >
+        have to be an email
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Message</label>
+      <textarea
+        name="message"
+        cols="30"
+        rows="10"
+        formControlName="message"
+        #messageField
+        [ngClass]="{
+          'input-danger': message.invalid && (message.dirty || message.touched),
+          'input-success': message.valid
+        }"
+      ></textarea>
+      <div
+        *ngIf="message.invalid && (message.dirty || message.touched)"
+        class="input-error"
+      >
+        is required <br />
+        min 20 characters
+      </div>
+    </div>
+    <div class="btn-holder">
+      <button [disabled]="myform.invalid" #sendBtn>Send</button>
+    </div>
+  </form>
+</div>

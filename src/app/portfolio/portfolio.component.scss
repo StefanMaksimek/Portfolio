@@ -1,0 +1,39 @@
+@import "../../assets/variable.scss";
+
+section {
+  display: flex;
+  align-items: center;
+  padding: $spacing-XL;
+
+  .img-holder {
+    padding: $spacing-L;
+    img {
+      width: 100%;
+      max-width: 800px;
+      object-fit: cover;
+    }
+  }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: $fontsize-p;
+    h2 {
+      color: $primary;
+    }
+    .description {
+      padding: $spacing-M 0;
+    }
+    button {
+      color: $primary;
+      border: 2px solid $primary;
+      transition: $transition-ms;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}

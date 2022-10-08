@@ -1,0 +1,29 @@
+@import "../../assets/variable.scss";
+
+section {
+  display: flex;
+  align-items: center;
+  padding: $spacing-XL;
+
+  .img-holder {
+    padding: $spacing-L;
+    img {
+      width: 100%;
+      max-width: 800px;
+      object-fit: cover;
+    }
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: $fontsize-p;
+    .title {
+      h2 {
+        color: $primary;
+      }
+    }
+  }
+}

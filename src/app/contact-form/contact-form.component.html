@@ -74,4 +74,6 @@
       <button [disabled]="myform.invalid" #sendBtn>Send</button>
     </div>
   </form>
+  <div class="sendign-mail" *ngIf="emailSending">E-Mail wird gesendet</div>
+  <div class="send-mail" *ngIf="emailSend">E-Mail wurde gesendet</div>
 </div>

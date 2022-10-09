@@ -7,6 +7,10 @@ body {
   font-family: $haed-font;
   color: $white;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .overflowHidden {
@@ -69,3 +73,6 @@ button {
     background-color: $black;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

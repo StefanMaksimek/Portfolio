@@ -3,6 +3,22 @@
 .contact {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.sendign-mail,
+.send-mail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff0000;
+  color: $white;
+  font-size: $fontsize-H1;
 }
 
 form {
@@ -15,6 +31,7 @@ form {
   a {
     color: $secondary;
   }
+
   .input-group {
     position: relative;
     display: flex;
@@ -65,9 +82,20 @@ form {
     border: none;
     outline: none;
     color: $white;
+
     &:active {
       color: $white;
     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px $darkGray inset !important;
+    -webkit-text-fill-color: $white !important;
+    border-left: 2px solid transparent;
+    border-top: 2px solid transparent;
   }
 
   ::placeholder {
@@ -94,5 +122,14 @@ form {
       background-color: $secondary-tr;
       cursor: not-allowed;
     }
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
   }
 }

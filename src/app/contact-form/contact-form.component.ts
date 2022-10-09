@@ -1,5 +1,27 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormGroupDirective,
+  NgForm,
+} from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
+  }
+}
 
 @Component({
   selector: 'app-contact-form',
@@ -12,10 +34,19 @@ export class ContactFormComponent implements OnInit {
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendBtn') sendBtn!: ElementRef;
 
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  matcher = new MyErrorStateMatcher();
+
   myform!: FormGroup;
   name!: FormControl;
   email!: FormControl;
   message!: FormControl;
+
+  emailSend = false;
+  emailSending = false;
 
   ngOnInit(): void {
     this.createFormControls();
@@ -47,6 +78,7 @@ export class ContactFormComponent implements OnInit {
     let messageField = this.messageField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let nameField = this.nameField.nativeElement;
+    this.emailSending = true;
 
     this.formDisableEnable(nameField, emailField, messageField, sendBtn, true);
     //https://stefan-maksimek.developerakademie.net/send_mail/send_mail.php
@@ -63,6 +95,8 @@ export class ContactFormComponent implements OnInit {
     );
 
     this.formDisableEnable(nameField, emailField, messageField, sendBtn, false);
+    this.emailSending = false;
+    this.emailSend = true;
   }
 
   formDisableEnable(

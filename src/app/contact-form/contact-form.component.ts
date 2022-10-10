@@ -45,7 +45,7 @@ export class ContactFormComponent implements OnInit {
   email!: FormControl;
   message!: FormControl;
 
-  emailPosted = true;
+  emailPosted = false;
   emaiIsSending = false;
 
   ngOnInit(): void {

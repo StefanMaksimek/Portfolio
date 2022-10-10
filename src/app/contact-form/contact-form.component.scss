@@ -58,7 +58,7 @@ form {
       position: absolute;
       top: 0;
       right: $spacing-S;
-      transform: translateY(450%);
+      transform: translateY(400%);
       color: $error;
     }
   }
@@ -94,8 +94,6 @@ form {
   input:-webkit-autofill:active {
     box-shadow: 0 0 0 30px $darkGray inset !important;
     -webkit-text-fill-color: $white !important;
-    border-left: 2px solid transparent;
-    border-top: 2px solid transparent;
   }
 
   ::placeholder {

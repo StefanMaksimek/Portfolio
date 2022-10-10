@@ -47,7 +47,7 @@ form {
 
   .btn-holder {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
   }
 
@@ -67,3 +67,33 @@ form {
     }
   }
 }
+/*
+//::ng-deep {
+//  /** Overrides caret & text color **/
+//  .my-form-field.mat-form-field-appearance-legacy .mat-input-element {
+//    caret-color: blue  !important;
+//    color: orange  !important;
+//  }
+//  .mat-form-field-label,
+//  .mat-focused {
+//    //change color of label/
+//    color: $blue  !important;
+//  }
+//  /* Border */
+//  .mat-form-field-appearance-outline .mat-form-field-outline {
+//    color: $colorDark  !important;
+//  }
+//  /* Font color */
+//  input.mat-input-element {
+//    color: black !important;
+//    caret-color: black !important;
+//  }
+//  .mat-form-field-ripple {
+//    background-color: $colorDark  !important;
+//  }
+//  textarea {
+//    color: black !important;
+//    caret-color: $colorDark  !important;
+//  }
+//}
+////

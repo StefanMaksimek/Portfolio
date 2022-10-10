@@ -1,71 +1,25 @@
-<section>
-  <div class="img-holder">
-    <img src="../../assets/img/credential.png" alt="" />
-  </div>
-  <div class="work">
-    <div class="title"><h2>El Pollo Loco</h2></div>
-    <div class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-      repellendus voluptatibus asperiores alias aliquid ex a enim fugit! Dolore
-      hic architecto quidem odio facilis maxime expedita! Ut labore aperiam
-      ipsum?
+<section *ngFor="let project of projects; let i = index">
+  <div class="content" [ngClass]="{ reverse: i % 2 }">
+    <div class="work">
+      <div class="title">
+        <h2>{{ project.title }}</h2>
+      </div>
+      <div class="description">
+        {{ project.description }}
+      </div>
+      <a
+        *ngIf="project.status == 'ready'"
+        href="{{ project.href }}"
+        target="_blank"
+        ><button>Try out</button></a
+      >
+      <a *ngIf="project.status == 'in progress'" href="" target="_blank"
+        ><button disabled>in Progress</button></a
+      >
     </div>
-    <a
-      href="https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/"
-      target="_blank"
-      ><button>Try out</button></a
-    >
-  </div>
-</section>
-<hr />
-<section>
-  <div class="work">
-    <div class="title"><h2>Portfolio</h2></div>
-    <div class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-      repellendus voluptatibus asperiores alias aliquid ex a enim fugit! Dolore
-      hic architecto quidem odio facilis maxime expedita! Ut labore aperiam
-      ipsum?
+    <div class="img-holder">
+      <img src="../../assets/img/{{ project.img }}" alt="" />
     </div>
-    <a href="" target="_blank"><button>Try out</button></a>
   </div>
-  <div class="img-holder">
-    <img src="../../assets/img/business_app.jpg" alt="" />
-  </div>
-</section>
-<hr />
-<section>
-  <div class="img-holder">
-    <img src="../../assets/img/laptop.jpg" alt="" />
-  </div>
-  <div class="work">
-    <div class="title"><h2>Kanban Project Management Tool</h2></div>
-    <div class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-      repellendus voluptatibus asperiores alias aliquid ex a enim fugit! Dolore
-      hic architecto quidem odio facilis maxime expedita! Ut labore aperiam
-      ipsum?
-    </div>
-    <a
-      href="https://gruppe-272.developerakademie.net/Gruppenarbeit-Join-/index.html"
-      target="_blank"
-      ><button>Try out</button></a
-    >
-  </div>
-</section>
-<hr />
-<section>
-  <div class="work">
-    <div class="title"><h2>Poker Game</h2></div>
-    <div class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-      repellendus voluptatibus asperiores alias aliquid ex a enim fugit! Dolore
-      hic architecto quidem odio facilis maxime expedita! Ut labore aperiam
-      ipsum?
-    </div>
-    <a href="" target="_blank"><button disabled>in Progress</button></a>
-  </div>
-  <div class="img-holder">
-    <img src="../../assets/img/ace.jpg" alt="" />
-  </div>
+  <hr *ngIf="i < projects.length - 1" />
 </section>

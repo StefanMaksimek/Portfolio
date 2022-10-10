@@ -2,13 +2,25 @@
 
 section {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: $spacing-XL;
+  padding: 0 $spacing-XL;
+
+  hr {
+    width: 80%;
+    border-color: $secondary;
+    margin: $spacing-L $spacing-XXL;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+  }
 
   .img-holder {
     padding: $spacing-L;
     img {
-      width: 100%;
+      width: 30vw;
       max-width: 800px;
       object-fit: cover;
     }
@@ -24,7 +36,7 @@ section {
       color: $primary;
     }
     .description {
-      padding: $spacing-M 0;
+      padding: $spacing-M;
     }
     button {
       color: $primary;
@@ -34,8 +46,18 @@ section {
         background-color: $primary;
         color: $white;
       }
+      &:disabled {
+        background-color: $primary-tr;
+        border: none;
+        color: $white-tr;
+        cursor: not-allowed;
+      }
     }
   }
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 @media screen and (max-width: 900px) {

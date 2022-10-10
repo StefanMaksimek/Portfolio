@@ -45,8 +45,8 @@ export class ContactFormComponent implements OnInit {
   email!: FormControl;
   message!: FormControl;
 
-  emailSend = false;
-  emailSending = false;
+  emailPosted = true;
+  emaiIsSending = false;
 
   ngOnInit(): void {
     this.createFormControls();
@@ -74,29 +74,37 @@ export class ContactFormComponent implements OnInit {
   }
 
   async sendMail() {
-    let sendBtn = this.sendBtn.nativeElement;
     let messageField = this.messageField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let nameField = this.nameField.nativeElement;
-    this.emailSending = true;
+    this.emaiIsSending = true;
 
-    this.formDisableEnable(nameField, emailField, messageField, sendBtn, true);
+    //this.formDisableEnable(nameField, emailField, messageField, sendBtn, true);
+
+    //ftp://f0148537@stefan-maksimek.developerakademie.net/send_mail/send_mail.php
     //https://stefan-maksimek.developerakademie.net/send_mail/send_mail.php
     let fd = new FormData();
     fd.append('name', nameField.value);
     fd.append('message', messageField.value);
     fd.append('email', emailField.value);
-    await fetch(
-      'https://stefan-maksimek.developerakademie.net/send_mail/send_mail.php',
-      {
-        method: 'POST',
-        body: fd,
-      }
-    );
+    try {
+      await fetch(
+        'https://stefan-maksimek.developerakademie.net/send_mail/send_mail.php',
+        {
+          method: 'POST',
+          body: fd,
+        }
+      );
 
-    this.formDisableEnable(nameField, emailField, messageField, sendBtn, false);
-    this.emailSending = false;
-    this.emailSend = true;
+      //this.formDisableEnable(nameField, emailField, messageField, sendBtn, false);
+
+      this.emaiIsSending = false;
+      this.emailPosted = true;
+    } catch (error) {
+      console.log(error);
+    }
+    this.emaiIsSending = false;
+    this.emailPosted = true;
   }
 
   formDisableEnable(
@@ -110,5 +118,16 @@ export class ContactFormComponent implements OnInit {
     messageField.disabled = i;
     emailField.disabled = i;
     nameField.disabled = i;
+  }
+
+  closeEmailInfo() {
+    let messageField = this.messageField.nativeElement;
+    let emailField = this.emailField.nativeElement;
+    let nameField = this.nameField.nativeElement;
+
+    nameField.value = '';
+    messageField.value = '';
+    emailField.value = '';
+    this.emailPosted = false;
   }
 }

@@ -74,6 +74,18 @@
       <button [disabled]="myform.invalid" #sendBtn>Send</button>
     </div>
   </form>
-  <div class="sendign-mail" *ngIf="emailSending">E-Mail wird gesendet</div>
-  <div class="send-mail" *ngIf="emailSend">E-Mail wurde gesendet</div>
+  <div class="sendign-mail" *ngIf="emaiIsSending">
+    <img src="../../assets/img/icons/message.png" alt="" />
+    <p>E-Mail wird gesendet</p>
+  </div>
+  <div class="send-mail" *ngIf="emailPosted">
+    <img src="../../assets/img/icons/message.png" alt="" />
+    <p>E-Mail wurde gesendet</p>
+    <a
+      (click)="closeEmailInfo()"
+      [routerLink]="['']"
+      routerLinkActive="router-link-active"
+      ><button>Back to home</button></a
+    >
+  </div>
 </div>

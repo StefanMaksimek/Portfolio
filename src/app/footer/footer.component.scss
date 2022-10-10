@@ -4,7 +4,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-L;
+  padding: $spacing-M $spacing-XXL;
   background-color: $white;
   color: $grey;
   font-size: $fontsize-p;
@@ -27,15 +27,20 @@ footer {
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 900px) {
   footer {
-    flex-direction: column;
-    padding: $spacing-S;
-    .rights {
-      margin-bottom: $spacing-S;
-    }
-    .web-links img {
-      margin-left: $spacing-S;
+    padding: $spacing-S $spacing-M;
+  }
+
+  @media screen and (max-width: 580px) {
+    footer {
+      flex-direction: column;
+      .rights {
+        margin-bottom: $spacing-S;
+      }
+      .web-links img {
+        margin-left: $spacing-S;
+      }
     }
   }
 }

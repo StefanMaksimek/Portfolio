@@ -109,10 +109,6 @@ header {
 }
 
 @media screen and (max-width: 1100px) {
-  header {
-    padding: $spacing-S $spacing-M;
-  }
-
   .links {
     a {
       display: none;
@@ -128,7 +124,10 @@ header {
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 900px) {
+  header {
+    padding: $spacing-S $spacing-M;
+  }
   .logo {
     h1 {
       display: none;

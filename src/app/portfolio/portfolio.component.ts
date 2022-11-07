@@ -9,34 +9,52 @@ export class PortfolioComponent implements OnInit {
   public projects = [
     {
       title: 'El Pollo Loco',
+      short_description: 'JavaScript-based jump and run game.',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'credential.png',
       href: 'https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/',
+      build_with: 'javaSkript',
+      status: 'ready',
+    },
+    {
+      title: 'Ring of fire',
+      short_description: 'Angular based card game.',
+      description:
+        'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
+      img: 'ringoffire.png',
+      href: 'https://ringoffire.vercel.app/game',
+      build_with: 'angular',
       status: 'ready',
     },
     {
       title: 'Portfolio',
+      short_description: 'Personal porfolio website.',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'business_app.jpg',
       href: '',
+      build_with: 'angular',
       status: 'ready',
     },
     {
       title: 'Kanban Project Management Tool',
+      short_description: 'Kanban Project Management Tool.',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'laptop.jpg',
       href: 'https://gruppe-272.developerakademie.net/Gruppenarbeit-Join-/index.html',
+      build_with: 'javaSkript',
       status: 'ready',
     },
     {
       title: 'Poker Game',
+      short_description: 'No-limit Texas Hold`em Poker',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'ace.jpg',
       href: 'https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/',
+      build_with: 'angular',
       status: 'in progress',
     },
   ];

@@ -53,7 +53,7 @@ export class PortfolioComponent implements OnInit {
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'ace.jpg',
-      href: 'https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/',
+      href: '',
       build_with: 'angular',
       status: 'in progress',
     },

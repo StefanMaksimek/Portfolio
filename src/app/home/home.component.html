@@ -32,8 +32,14 @@
           <div class="try-out">
             <span>{{ project.title }}</span>
             <p>{{ project.short_description }}</p>
-            <a href="{{ project.href }}" target="_blank"
+            <a
+              *ngIf="project.status == 'ready'"
+              href="{{ project.href }}"
+              target="_blank"
               ><button>Try out</button></a
+            >
+            <a *ngIf="project.status == 'in progress'" href="" target="_blank"
+              ><button disabled>In progress</button></a
             >
           </div>
         </div>

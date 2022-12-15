@@ -18,11 +18,18 @@ footer {
     }
     img {
       margin-left: $spacing-L;
-      border-radius: 50%;
       transition: $transition-ms;
       &:hover {
         background-color: $primary;
       }
+    }
+
+    .github {
+      border-radius: 50%;
+    }
+
+    .linkedin {
+      border-radius: 0.4rem;
     }
   }
 }

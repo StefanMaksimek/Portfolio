@@ -88,13 +88,10 @@ export class ContactFormComponent implements OnInit {
     fd.append('message', messageField.value);
     fd.append('email', emailField.value);
     try {
-      await fetch(
-        'https://stefan-maksimek.developerakademie.net/send_mail/send_mail.php',
-        {
-          method: 'POST',
-          body: fd,
-        }
-      );
+      await fetch('https://stefan-maksimek.de/assets/send_mail.php', {
+        method: 'POST',
+        body: fd,
+      });
 
       //this.formDisableEnable(nameField, emailField, messageField, sendBtn, false);
 

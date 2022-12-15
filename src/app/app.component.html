@@ -36,7 +36,7 @@
         I`M <span class="first-name">Stefan</span> Maksimek <br />
         Front End develop<span class="font-highlite">e</span>r
       </p>
-      <a (click)="scrollToElement('contact')"><button>Contact me</button></a>
+      <a (click)="scrollToElement(contact)"><button>Contact me</button></a>
     </div>
     <div class="portrait">
       <img src="../../assets/img/portfolioportrait.jpg" alt="" />
@@ -84,6 +84,8 @@
     <app-about></app-about>
   </div>
 
-  <app-contact-form id="contact"></app-contact-form>
+  <div #contact>
+    <app-contact-form></app-contact-form>
+  </div>
 </div>
 <app-footer></app-footer>

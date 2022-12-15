@@ -13,7 +13,7 @@ export class PortfolioComponent implements OnInit {
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'credential.png',
-      href: 'https://el-pollo-loco-e9eth27of-stefanmaksimek.vercel.app/',
+      href: 'https://el-pollo-loco.stefan-maksimek.de/',
       build_with: 'javaSkript',
       status: 'ready',
     },
@@ -23,7 +23,7 @@ export class PortfolioComponent implements OnInit {
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'ringoffire.png',
-      href: 'https://ringoffire.vercel.app/game',
+      href: 'https://ring-of-fire.stefan-maksimek.de/',
       build_with: 'angular',
       status: 'ready',
     },
@@ -43,7 +43,7 @@ export class PortfolioComponent implements OnInit {
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
       img: 'laptop.jpg',
-      href: 'https://gruppe-272.developerakademie.net/Gruppenarbeit-Join-/index.html',
+      href: 'https://join.stefan-maksimek.de/',
       build_with: 'javaSkript',
       status: 'ready',
     },

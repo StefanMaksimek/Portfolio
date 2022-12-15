@@ -1,35 +1,71 @@
 @import "../../assets/variable.scss";
 
-section {
-  display: flex;
-  align-items: center;
-  padding: $spacing-XL;
+.about-me {
+  text-align: center;
+  hr {
+    margin: $spacing-XL;
+  }
 
-  .img-holder {
-    padding: $spacing-L;
+  .me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     img {
-      width: 100%;
-      max-width: 800px;
-      object-fit: cover;
+      width: 300px;
+      border: 8px solid $primary;
+      margin-right: $spacing-L;
     }
   }
 
-  .description {
+  .journeys {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: $fontsize-p;
-    .title {
-      h2 {
-        color: $primary;
+    .journey {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: $spacing-M;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        background-color: $secondary;
+        padding: $spacing-M;
+        height: $spacing-XL;
+        border-radius: 50%;
+      }
+      .title {
+        font-weight: bold;
+        margin: $spacing-M;
       }
     }
   }
 }
 
 @media screen and (max-width: 900px) {
-  section {
-    flex-direction: column;
+  .about-me {
+    p {
+      max-width: none;
+    }
+
+    .me {
+      flex-direction: column;
+      img {
+        margin-right: 0;
+        margin-bottom: $spacing-M;
+      }
+    }
+
+    hr {
+      display: none;
+    }
+    .journeys {
+      flex-direction: column;
+      .journey-description {
+        padding: 0 $spacing-L;
+      }
+    }
   }
 }

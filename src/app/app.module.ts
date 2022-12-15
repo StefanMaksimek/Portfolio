@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { MenuComponent } from './menu/menu.component';
-import { HomeComponent } from './home/home.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './contact-form/contact-form.component';
@@ -21,8 +19,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     PrivacyComponent,
     ImprintComponent,
-    MenuComponent,
-    HomeComponent,
     SkillsComponent,
     ContactFormComponent,
     FooterComponent,

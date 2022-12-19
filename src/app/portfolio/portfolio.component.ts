@@ -32,7 +32,7 @@ export class PortfolioComponent implements OnInit {
       short_description: 'Personal porfolio website.',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
-      img: 'business_app.jpg',
+      img: 'portfolio.jpg',
       href: '',
       build_with: 'angular',
       status: 'ready',
@@ -42,7 +42,7 @@ export class PortfolioComponent implements OnInit {
       short_description: 'Kanban Project Management Tool.',
       description:
         'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
-      img: 'laptop.jpg',
+      img: 'join.jpg',
       href: 'https://join.stefan-maksimek.de/',
       build_with: 'javaSkript',
       status: 'ready',

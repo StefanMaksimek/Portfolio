@@ -1,0 +1,60 @@
+<div class="home">
+  <div class="section-black overview">
+    <div class="overview-text">
+      <p>
+        Hi, <br />
+        I`m <span class="first-name">Stefan</span> Maksimek <br />
+        Front End develop<span class="font-highlite">e</span>r
+      </p>
+      <a (click)="scrollToElement(contact)"><button>Contact me</button></a>
+    </div>
+    <div class="portrait">
+      <img src="../../assets/img/portrait_01.jpg" alt="" />
+    </div>
+  </div>
+  <app-skills></app-skills>
+
+  <div class="section-black my-work" id="my-work">
+    <H2>My Work</H2>
+
+    <div class="tab-holder">
+      <button (click)="workFilter('all')">ALL</button>
+      <button (click)="workFilter('javaSkript')">JavaScript</button>
+      <button (click)="workFilter('angular')">Angular</button>
+    </div>
+
+    <div class="credentials">
+      <div class="ng-holder" *ngFor="let project of portfolio.projects">
+        <div
+          class="credential"
+          *ngIf="
+            project.build_with == javaSkript || project.build_with == angular
+          "
+        >
+          <img src="../../assets/img/{{ project.img }}" alt="" />
+          <div class="try-out">
+            <span>{{ project.title }}</span>
+            <p>{{ project.short_description }}</p>
+            <a
+              *ngIf="project.status == 'ready'"
+              href="{{ project.href }}"
+              target="_blank"
+              ><button>Try out</button></a
+            >
+            <a *ngIf="project.status == 'in progress'" href="" target="_blank"
+              ><button disabled>In progress</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <app-about></app-about>
+  </div>
+
+  <div #contact>
+    <app-contact-form></app-contact-form>
+  </div>
+</div>

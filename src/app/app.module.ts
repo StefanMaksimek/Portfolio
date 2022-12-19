@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +27,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     AboutComponent,
     PortfolioComponent,
+    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

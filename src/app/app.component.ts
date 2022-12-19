@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { Router, RouterLink } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
@@ -7,48 +8,10 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public mmActive = false;
+  constructor(public router: Router) {}
 
-  public javaSkript: string = 'javaSkript';
-  public angular: string = 'angular';
-
-  portfolio = new PortfolioComponent();
-  constructor() {}
-
-  openCloseMobileSide() {
-    if (this.mmActive) {
-      this.mmActive = false;
-    } else {
-      this.mmActive = true;
-    }
-  }
-
-  closeMobileMenu() {
-    if (this.mmActive) {
-      this.mmActive = false;
-    }
-  }
-
-  scrollToElement(section: any): void {
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
-  }
-
-  workFilter(x: String) {
-    if (x == 'angular') {
-      this.angular = 'angular';
-      this.javaSkript = '';
-    }
-    if (x == 'javaSkript') {
-      this.angular = '';
-      this.javaSkript = 'javaSkript';
-    }
-    if (x == 'all') {
-      this.angular = 'angular';
-      this.javaSkript = 'javaSkript';
-    }
+  onActive() {
+    window.scroll(0, 0);
+    //(activate)="onActive()"
   }
 }

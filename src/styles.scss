@@ -1,16 +1,34 @@
 @import "./assets/variable.scss";
 @import "./assets/fonts/font.css";
 
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: $black;
   font-family: $haed-font;
   color: $white;
   overflow-x: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: $spacing-XS;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient($secondary-tr, $secondary, $secondary-tr);
+  border-radius: $brd-radius;
 }
 
 .overflowHidden {
@@ -73,6 +91,3 @@ button {
     background-color: $black;
   }
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,5 +1,11 @@
 @import "../../assets/variable.scss";
 
+img {
+  height: $spacing-XL;
+  width: $spacing-XL;
+  object-fit: cover;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -8,6 +14,16 @@ footer {
   background-color: $white;
   color: $grey;
   font-size: $fontsize-p;
+
+  .rights {
+    display: flex;
+    align-items: center;
+    .links {
+      display: flex;
+      flex-direction: column;
+      margin-left: $spacing-L;
+    }
+  }
 
   a {
     color: $grey;
@@ -43,10 +59,14 @@ footer {
     footer {
       flex-direction: column;
       .rights {
-        margin-bottom: $spacing-S;
+        flex-direction: column;
+        .links {
+          align-items: center;
+          margin: $spacing-S 0;
+        }
       }
       .web-links img {
-        margin-left: $spacing-S;
+        margin-left: 0;
       }
     }
   }

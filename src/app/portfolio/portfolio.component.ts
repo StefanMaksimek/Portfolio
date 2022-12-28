@@ -47,6 +47,28 @@ export class PortfolioComponent implements OnInit {
       build_with: 'javaSkript',
       status: 'ready',
     },
+
+    {
+      title: 'Slack-Clone',
+      short_description: 'Web-Messenger like Slack',
+      description:
+        'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
+      img: 'slack_clone.jpg',
+      href: 'https://slack-clone.stefan-maksimek.de/',
+      build_with: 'angular',
+      status: 'ready',
+    },
+    {
+      title: 'Simple CRM',
+      short_description: 'CRM system with fake-data',
+      description:
+        'test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci deserunt nesciunt veniam minima eligendi, commodi cum numquam unde neque. test',
+      img: 'simple_crm.jpg',
+      href: 'https://simple-crm.stefan-maksimek.de/',
+      build_with: 'angular',
+      status: 'ready',
+    },
+    /** 
     {
       title: 'Poker Game',
       short_description: 'No-limit Texas Hold`em Poker',
@@ -57,6 +79,7 @@ export class PortfolioComponent implements OnInit {
       build_with: 'angular',
       status: 'in progress',
     },
+    */
   ];
 
   constructor() {}

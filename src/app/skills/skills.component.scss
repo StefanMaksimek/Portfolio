@@ -7,7 +7,6 @@
 }
 .skill-box {
   margin-top: $spacing-XL;
-  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -15,8 +14,6 @@
 
   .skill-description {
     position: relative;
-    width: calc(1.5 * $spacing-XXL);
-    height: $spacing-XXL;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +22,14 @@
     background-color: $white;
     color: $black;
     font-size: $fontsize-p;
+    width: calc(2 * $spacing-XXL);
+    height: calc(1.5 * $spacing-XXL);
     span {
       transform: translateY(calc($spacing-XL / 4));
+    }
+    @media screen and (max-width: 1000px) {
+      width: calc(1.5 * $spacing-XXL);
+      height: $spacing-XXL;
     }
   }
 

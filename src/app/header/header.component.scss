@@ -4,7 +4,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-M $spacing-XXL;
+  padding: 0 $spacing-XXL;
+  height: $spacing-XXL;
 }
 
 .logo {
@@ -126,7 +127,7 @@ header {
 
 @media screen and (max-width: 900px) {
   header {
-    padding: $spacing-S $spacing-M;
+    padding: 0 $spacing-M;
   }
   .logo {
     h1 {

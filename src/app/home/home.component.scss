@@ -2,34 +2,84 @@
 
 .overview {
   display: flex;
-  justify-content: space-between;
-  p {
-    font-size: $fontsize-H1;
-    margin-right: $spacing-S;
-  }
-  img {
-    max-height: 50vh;
-    max-width: 40vw;
-    border: 8px solid $secondary;
-  }
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(100vh - $spacing-XXL - $spacing-XL - $spacing-XL);
+  .holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  button {
-    color: $secondary;
-    border: 2px solid $secondary;
-    transition: $transition-ms;
-    &:hover {
-      background-color: $secondary;
-      color: $white;
+    p {
+      margin-right: $spacing-XL;
+    }
+    span,
+    p {
+      font-size: $fontsize-H1;
+      @media screen and (max-width: 1200px) {
+        font-size: 56px;
+      }
+      @media screen and (max-width: 1110px) {
+        font-size: 48px;
+      }
+    }
+    img {
+      max-height: 50vh;
+      max-width: 40vw;
+    }
+
+    button {
+      color: $secondary;
+      border: 2px solid $secondary;
+      transition: $transition-ms;
+      &:hover {
+        background-color: $secondary;
+        color: $white;
+      }
+    }
+  }
+  mat-icon {
+    display: flex;
+    align-items: center;
+    font-size: $spacing-XL;
+    width: $spacing-XL;
+    height: $spacing-XL;
+    border-radius: 50%;
+    animation: glow 2500ms infinite;
+    @keyframes glow {
+      0% {
+        color: $white;
+      }
+      50% {
+        color: $white-tr;
+      }
+      100% {
+        color: $white;
+      }
     }
   }
 }
 
 .first-name {
+  display: inline-block;
   color: $primary;
   font-size: $fontsize-H1;
+  overflow-x: hidden;
+  transform: translate(0px, 16px);
+}
+.developer {
+  white-space: nowrap;
+}
+
+.loper {
+  display: inline-block;
+  overflow-x: hidden;
+  transform: translate(0px, 16px);
 }
 
 .font-highlite {
+  display: inline-block;
   color: $secondary;
   font-size: $fontsize-H1;
 }
@@ -131,8 +181,12 @@
 
 @media screen and (max-width: 900px) {
   .overview {
+    min-height: calc(100vh - $spacing-XXL - 2 * $spacing-S);
+  }
+  .holder {
     flex-direction: column-reverse;
     align-items: center;
+    text-align: center;
     img {
       margin: 0;
       max-height: none;
@@ -151,5 +205,35 @@
         height: $spacing-L;
       }
     }
+  }
+}
+
+.loper,
+.first-name {
+  @media screen and (max-width: 1200px) {
+    transform: translate(0px, 14px);
+  }
+  @media screen and (max-width: 1110px) {
+    transform: translate(0px, 12px);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkLine {
+  from {
+    border-right-color1: $white;
+  }
+
+  to {
+    border-right-color: transparent;
   }
 }

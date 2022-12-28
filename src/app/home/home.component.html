@@ -1,18 +1,34 @@
 <div class="home">
   <div class="section-black overview">
-    <div class="overview-text">
-      <p>
-        Hi, <br />
-        I`m <span class="first-name">Stefan</span> Maksimek <br />
-        Front End develop<span class="font-highlite">e</span>r
-      </p>
-      <a (click)="scrollToElement(contact)"><button>Contact me</button></a>
+    <div class="holder">
+      <div class="overview-text">
+        <p>
+          Hi, <br />
+          I`m <span @fadeInName class="first-name">Stefan</span> Maksimek <br />
+          Web
+          <span class="developer">
+            Dev<span @fadeInLetter class="font-highlite">e</span>
+            <span @written class="loper">loper</span>
+          </span>
+        </p>
+        <a @btnRotate (click)="scrollToElement(contact)"
+          ><button>Contact me</button></a
+        >
+      </div>
+
+      <div class="portrait">
+        <img src="../../assets/img/portrait_01.jpg" alt="" />
+      </div>
     </div>
-    <div class="portrait">
-      <img src="../../assets/img/portrait_01.jpg" alt="" />
-    </div>
+
+    <button @arrowRotate mat-icon-button (click)="scrollToElement(skills)">
+      <mat-icon>keyboard_double_arrow_down</mat-icon>
+    </button>
   </div>
-  <app-skills></app-skills>
+
+  <div #skills>
+    <app-skills></app-skills>
+  </div>
 
   <div class="section-black my-work" id="my-work">
     <H2>My Work</H2>
@@ -24,7 +40,12 @@
     </div>
 
     <div class="credentials">
-      <div class="ng-holder" *ngFor="let project of portfolio.projects">
+      <div
+        data-aos="flip-up"
+        data-aos-duration="1000"
+        class="ng-holder"
+        *ngFor="let project of portfolio.projects"
+      >
         <div
           class="credential"
           *ngIf="
